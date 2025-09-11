@@ -1,0 +1,72 @@
+---
+const PROJECTS = [
+  {
+    title: 'Ivo Barinstein Portfolio',
+    img: 'img/placeholder.jpg',
+    description: 'Este portafolio, desarrollado con Astro y Tailwind CSS. Presenta mis proyectos, habilidades y experiencia de manera atractiva y funcional.',
+    stack: ['astro', 'tailwindCss', 'react', 'typescript', 'vite' ],
+  },
+  {
+    title: "Tienda Manch",
+    img: "img/tienda-manch.png",
+    description:
+      "Proyecto final que simula una tienda e-commerce especializada en bebidas, con funcionalidades completas de navegación, autenticación y un panel de gestión de productos para los administradores.",
+    preview: "https://ivobarin.github.io/tienda-manch/",
+    repo: "https://github.com/ivobarin/tienda-manch",
+    stack: ['react', 'reactRouter', 'javascript', 'vite', 'css'],
+  },
+  {
+    title: "Youtube Downloader",
+    img: "https://raw.githubusercontent.com/ivobarin/Py-Youtube-Downloader/refs/heads/main/other/demostration.gif",
+    description:
+      "Programa de escritorio desarrollado con Python y Tkinter que permite a los usuarios descargar videos de YouTube en la mejor calidad posible. Interfaz sencilla donde se pueden pegar la URL del video, seleccionar el formato deseado (video o audio) antes de iniciar la descarga.",
+    repo: "https://github.com/ivobarin/Py-Youtube-Downloader",
+    stack: ['python','pypi'],
+    preview: null
+  }, 
+  {
+    title: 'Google Ta Te Ti',
+    img: 'img/ta-te-ti.png',
+    description: 'Clon del juego Ta Te Ti (Tic Tac Toe) de Google, desarrollado con HTML, CSS y JavaScript. Permite a dos jugadores competir en un tablero interactivo, con detección automática de victorias y empates.',
+    preview: 'https://ivobarin.github.io/simple-tic-tac-toe/',
+    repo: 'https://github.com/ivobarin/simple-tic-tac-toe',
+    stack: ['html5', 'css', 'javascript'],
+  }
+];
+
+import ProyectItem from "./ProyectItem.astro";
+import { Briefcase } from "lucide-react";
+---
+
+<section class="rounded-xl mx-4 mt-8">
+  <div class="w-full mx-auto p-4">
+    <div
+      class="flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
+    >
+      <Briefcase />
+      <h2
+        class="font-diagraphetc text-sm text-[20px] tracking-wide max-sm:text-xl"
+      >
+        Proyectos
+      </h2>
+    </div>
+    <div class="mt-12">
+      <ol class="grid grid-cols-1 gap-3 mt-6">
+        {
+          PROJECTS.map((project) => (
+            <li>
+              <ProyectItem
+                title={project.title}
+                preview={project.preview}
+                repo={project.repo}
+                description={project.description}
+                stack={project.stack}
+                img={project.img}
+              />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

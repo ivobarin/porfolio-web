@@ -1,0 +1,64 @@
+---
+import { BookOpen } from "lucide-react";
+import EducationItem from "./EducationItem.astro";
+const EDUCATION = [
+  {
+    title: "React JS",
+    institution: "Talento Tech",
+    description:
+      "Curso intensivo de 4 meses enfocado en React JS, donde adquirí una sólida base en esta biblioteca y profundicé mis conocimientos en desarrollo front-end.",
+    link: "https://openbadgepassport.com/app/badge/info/988703",
+    date: "2025",
+  },
+  {
+    title: "Front-end JS",
+    institution: "Talento Tech",
+    description:
+      "Formación intensiva orientada a dominar herramientas modernas y prácticas vigentes en el desarrollo front-end con JavaScript.",
+    link: "https://openbadgepassport.com/app/badge/info/988699",
+    date: "2024",
+  },
+  {
+    title: "Técnico Universitario en Programación",
+    institution: "Universidad Tecnológica Nacional",
+    description:
+      "Formación académica enfocada en el desarrollo de software, lógica computacional y resolución de problemas. Una base sólida para crear soluciones digitales con criterio profesional y técnico.",
+    link: "https://fra.utn.edu.ar/tecnicatura-universitaria-en-programacion-inscribirme/",
+    date: "2022 - Actualidad",
+  },
+];
+---
+
+<section class="rounded-xl mx-4 mt-8">
+  <!-- section tag -->
+  <div class="w-full mx-auto p-4">
+    <div
+      class="flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
+    >
+      <BookOpen />
+      <h2
+        class="font-diagraphetc text-sm text-[20px] tracking-wide max-sm:text-xl"
+      >
+        Estudios
+      </h2>
+    </div>
+    <!-- EducationItem elements  -->
+    <div>
+      <ol class="relative mt-15">
+        {
+          EDUCATION.map((edu) => (
+            <li>
+              <EducationItem
+                title={edu.title}
+                institution={edu.institution}
+                link={edu.link}
+                description={edu.description}
+                date={edu.date}
+              />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+import TypeWriter from "./ui/TypeWriter";
+import Badge from "./Badge.astro";
+---
+
+<article class="w-full flex justify-center p-5">
+  <section class="flex flex-col gap-8 pb-20 pt-6 sm:justify-center">
+    <Badge />
+    <div class="w-full pb-6">
+      <div class="flex flex-col items-center">
+        <img
+          src="yo.jpg"
+          alt="Ivo Barinstein"
+          class="rounded-full w-32 h-32 object-cover shadow-lg border-5 border-zinc-600/75 dark:border-white filter-[drop-shadow(0_0_0.7rem_rgba(0,0,0,0.8))] dark:filter-[drop-shadow(0_0_0.5rem_rgba(255,255,255,0.8))]"
+        />
+      </div>
+    </div>
+    <h1 class="font-medium max-sm:text-center sm:px-5 lg:px-15">
+      <TypeWriter client:load text="Hola, soy Ivo." />
+    </h1>
+    <h2
+      class="font-diagraphetc mt-4 mb-8 text-slate-900 dark:text-slate-200 text-center sm:text-left sm:text-[22px]"
+    >
+      Tecnico Universitario en programación y desarrollador web front-end.
+    </h2>
+    <!-- Button -->
+    <div class="flex justify-center">
+      <a
+        href="/IvoBarinsteinCV.pdf"
+        download="IvoBarinsteinCV.pdf"
+        class="inline-flex items-center gap-3 justify-center w-45 rounded-full border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-white/10 px-3 py-2 text-lg font-medium text-slate-900 dark:text-white shadow-lg hover:bg-slate-200 dark:hover:bg-black/20 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-file-cv"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005zm-2.5 8a2.5 2.5 0 0 0 -2.5 2.5v3a2.5 2.5 0 1 0 5 0a1 1 0 0 0 -2 0a.5 .5 0 1 1 -1 0v-3a.5 .5 0 1 1 1 0a1 1 0 0 0 2 0a2.5 2.5 0 0 0 -2.5 -2.5m6.743 .03a1 1 0 0 0 -1.213 .727l-.53 2.119l-.53 -2.119a1 1 0 1 0 -1.94 .486l1.5 6c.252 1.01 1.688 1.01 1.94 0l1.5 -6a1 1 0 0 0 -.727 -1.213m-1.244 -7.031l4.001 4.001h-4z"
+          ></path>
+        </svg>
+        <span class="font-diagraphetc">Descargar CV</span>
+      </a>
+    </div>
+  </section>
+</article>

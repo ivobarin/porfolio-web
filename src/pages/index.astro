@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { DockDemo } from "../components/magicui/dockDemo";
+import HeroSection from "@/components/HeroSection.astro";
+import Educacion from "@/components/Education.astro";
+import Proyectos from "@/components/Proyects.astro";
+import Habilidades from "@/components/Skills.astro";
+import SobreMi from "@/components/AboutMe.astro";
+---
+
+<Layout title="Ivo Barinstein">
+  <div class="relative flex min-h-dvh flex-col items-center">
+    <main class="w-full h-screen max-w-[1200px] px-12 max-sm:px-4">
+      <!-- Hero Section -->
+      <section id="section-0">
+        <HeroSection />
+      </section>
+      <hr class="my-8 border-slate-600" />
+      <!-- About Me Section -->
+      <section id="section-1">
+        <SobreMi />
+      </section>
+      <hr class="my-8 border-slate-600" />
+      <!-- Education Section -->
+      <section id="section-2">
+        <Educacion />
+      </section>
+      <hr class="my-8 border-slate-600" />
+      <!-- Skills Section -->
+      <section id="section-3">
+        <Habilidades />
+      </section>
+      <!-- Projects Section -->
+      <hr class="my-8 border-slate-600" />
+      <section id="section-4">
+        <Proyectos />
+      </section>
+    </main>
+  </div>
+  <div class="fixed bottom-10 left-0 right-0">
+    <DockDemo client:load />
+  </div>
+</Layout>

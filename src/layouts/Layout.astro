@@ -1,0 +1,66 @@
+---
+const title = Astro.props.title;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Mi portafolio personal" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Set theme early to avoid flash (runs before CSS loads) -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (
+            stored === "dark" ||
+            (stored === null && prefersDark) ||
+            (stored === "system" && prefersDark)
+          ) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <!-- Preload local fonts to reduce FOIT/LCP impact -->
+    <link
+      rel="preload"
+      href="/fonts/diagraphetc.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/mooxy.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!--https://background-snippets-jowj-2n3nyvkrc-julienthibeauts-projects.vercel.app/ -->
+    <!-- tema claro -->
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <!-- tema oscuro -->
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <slot />
+  </body>
+</html>

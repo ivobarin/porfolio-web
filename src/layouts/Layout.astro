@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const title = Astro.props.title;
 ---
 
@@ -30,8 +31,6 @@ const title = Astro.props.title;
         } catch (e) {}
       })();
     </script>
-    <!-- Tailwind -->
-    <link rel="stylesheet" href="/src/styles/global.css" />
     <!-- Preload local fonts to reduce FOIT/LCP impact -->
     <link
       rel="preload"

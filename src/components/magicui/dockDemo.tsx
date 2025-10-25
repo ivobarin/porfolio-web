@@ -1,8 +1,7 @@
 "use client";
 
-import { CalendarIcon, ContactIcon, HomeIcon, MailIcon, PencilIcon,  } from "lucide-react";
+import {ContactIcon, HomeIcon, MailIcon, PencilIcon,  } from "lucide-react";
 import React from "react";
-
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -40,7 +39,7 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", index: 0, icon: HomeIcon, label: "inicio" },
+    { href: "#", index: 0, icon: HomeIcon, label: "Inicio" },
     { href: "#", index: 4, icon: PencilIcon, label: "Proyectos" },
   ],
   contact: {
@@ -55,7 +54,12 @@ const DATA = {
         url: "https://www.linkedin.com/in/ivo-barinstein-3b0972253",
         icon: Icons.linkedin,
       },
-      email: {
+      Numero: {
+        name: "Call Me",
+        url: import.meta.env.PHONE,
+        icon: ContactIcon
+      }, 
+      Email: {
         name: "Send Email",
         url: "mailto:ivobarinstein@gmail.com",
         icon: Icons.email,

@@ -1,6 +1,6 @@
 "use client";
 
-import {ContactIcon, HomeIcon, MailIcon, PencilIcon,  } from "lucide-react";
+import { HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 import React from "react";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import { buttonVariants } from "@/components/ui/button";
@@ -54,11 +54,6 @@ const DATA = {
         url: "https://www.linkedin.com/in/ivo-barinstein-3b0972253",
         icon: Icons.linkedin,
       },
-      Numero: {
-        name: "Call Me",
-        url: import.meta.env.PHONE,
-        icon: ContactIcon
-      }, 
       Email: {
         name: "Send Email",
         url: "mailto:ivobarinstein@gmail.com",

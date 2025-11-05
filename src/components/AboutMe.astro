@@ -5,7 +5,7 @@ let age = new Date().getFullYear() - 2003;
 
 <section>
   <div
-    class="mx-4 mt-8 flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
+    class="mx-4 mt-8 mb-4 flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
   >
     <UserCircle />
     <h2
@@ -14,7 +14,6 @@ let age = new Date().getFullYear() - 2003;
       Sobre Mí
     </h2>
   </div>
-  <!-- modifica aqui! -->
   <div class="rounded-xl overflow-hidden group">
     <div
       class="p-4 md:p-10 transition-all duration-500 ease-out hover:scale-[1.015] hover:shadow-2xl"
@@ -35,8 +34,9 @@ let age = new Date().getFullYear() - 2003;
         <div
           aria-hidden="true"
           class="pointer-events-none absolute -right-16 -top-16 w-48 h-64
-                  bg-gradient-to-tr from-blue-400/30 to-cyan-300/20 blur-3xl
-                  transform rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                bg-gradient-to-tr from-blue-400/30 to-cyan-300/20 blur-3xl
+                transform rotate-45 opacity-0 md:group-hover:opacity-100
+                transition-opacity duration-700 ease-out"
         >
         </div>
         <!-- content (above background) -->
@@ -45,18 +45,24 @@ let age = new Date().getFullYear() - 2003;
             class="font-diagraphetc text-base md:text-lg leading-relaxed text-gray-800 dark:text-gray-100 space-y-5"
           >
             <p
-              class="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100"
+              class="md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0
+                     transition-all duration-500 ease-out md:delay-100
+                     opacity-100 translate-y-0"
             >
               Tengo <strong class="text-blue-700 dark:text-blue-300/80"
                 >{age} años</strong
-              > y soy oriundo de <strong class="text-sky-500">Buenos Aires, Argentina.</strong> Actualmente estoy cursando
-              la carrera de Técnico Universitario en Programación en la Universidad
-              Tecnológica Nacional (UTN). A lo largo de la carrera hemos adquirido
-              una sólida base de programación y resolución de problemas.
+              > y soy oriundo de <strong class="text-sky-500"
+                >Buenos Aires, Argentina.</strong
+              > Actualmente estoy cursando la carrera de Técnico Universitario en
+              Programación en la Universidad Tecnológica Nacional (UTN). A lo largo
+              de la carrera hemos adquirido una sólida base de programación y resolución
+              de problemas.
             </p>
 
             <p
-              class="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-200"
+              class="md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0
+                     transition-all duration-500 ease-out md:delay-200
+                     opacity-100 translate-y-0"
             >
               Me apasiona el desarrollo web front-end y disfruto creando
               <strong class="text-indigo-700 dark:text-cyan-300"
@@ -67,7 +73,9 @@ let age = new Date().getFullYear() - 2003;
             </p>
 
             <p
-              class="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-300"
+              class="md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0
+                     transition-all duration-500 ease-out md:delay-300
+                     opacity-100 translate-y-0"
             >
               En mi tiempo libre, me gusta explorar nuevas tendencias en diseño
               web, escuchar música y aprender sobre desarrollo de videojuegos

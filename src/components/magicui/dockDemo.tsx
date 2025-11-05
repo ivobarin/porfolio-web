@@ -85,7 +85,7 @@ export function DockDemo() {
       <TooltipProvider>
         <Dock
           direction="middle"
-          className={isDark ? "rounded-full bg-zinc-900 border-zinc-800" : "rounded-full bg-white border-zinc-200"}
+          className={isDark ? "rounded-full bg-zinc-900 border-zinc-800 z-50" : "rounded-full bg-white border-zinc-200 z-50"}
         >
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>

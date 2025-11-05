@@ -3,7 +3,7 @@ import { UserCircle } from "lucide-react";
 let age = new Date().getFullYear() - 2003;
 ---
 
-<section>
+<section class="pb-10 md:pb-6">
   <div
     class="mx-4 mt-8 mb-4 flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
   >
@@ -16,18 +16,18 @@ let age = new Date().getFullYear() - 2003;
   </div>
   <div class="rounded-xl overflow-hidden group">
     <div
-      class="p-4 md:p-10 transition-all duration-500 ease-out hover:scale-[1.015] hover:shadow-2xl"
+      class="p-4 md:p-10 transition-all duration-500 ease-out md:hover:scale-[1.015] md:hover:shadow-2xl"
     >
       <article
         class="relative overflow-hidden rounded-md shadow-lg shadow-black/20"
       >
         <div
           class="absolute inset-0 bg-gradient-to-br
-                  from-zinc-100/60 via-white/90 to-zinc-200/40
-                  bg-zinc-600/35
-                  dark:from-blue-950/70 dark:via-blue-900/75 dark:to-slate-800/60
-                  dark:bg-blue-900/75
-                  backdrop-blur-sm"
+      from-zinc-100/60 via-white/90 to-zinc-200/40
+      bg-zinc-600/35
+      dark:from-blue-950/70 dark:via-blue-900/75 dark:to-slate-800/60
+      dark:bg-blue-900/75
+      backdrop-blur-sm pointer-events-none z-0"
         >
         </div>
         <!-- decorative soft blur accent (non-interactive) -->

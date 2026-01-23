@@ -14,6 +14,7 @@ let age = new Date().getFullYear() - 2003;
       Sobre Mí
     </h2>
   </div>
+  <!-- card background -->
   <div class="rounded-xl overflow-hidden group">
     <div
       class="p-4 md:p-10 transition-all duration-500 ease-out md:hover:scale-[1.015] md:hover:shadow-2xl"
@@ -89,7 +90,6 @@ let age = new Date().getFullYear() - 2003;
 </section>
 
 <style>
-  /* Animación suave solo en hover (controlada por clases Tailwind + transiciones) */
   @media (prefers-reduced-motion: reduce) {
     * {
       animation: none !important;
@@ -97,7 +97,6 @@ let age = new Date().getFullYear() - 2003;
     }
   }
 
-  /* Opcional: efecto de brillo sutil al hover */
   .group:hover .bg-gradient-to-tr {
     filter: blur(80px);
   }

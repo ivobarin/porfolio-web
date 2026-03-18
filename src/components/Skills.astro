@@ -1,19 +1,13 @@
 ---
 import { IconCloudDemo } from "./Stack";
 import { PuzzleIcon } from "lucide-react";
+import SectionTitle from "./ui/SectionTitle";
 ---
 
 <section class="rounded-xl mx-4 mt-8">
   <div class="mx-auto p-4">
-    <div
-      class="flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
-    >
-      <PuzzleIcon />
-      <h2
-        class="font-diagraphetc text-sm text-[20px] tracking-wide max-sm:text-xl"
-      >
-        Habilidades
-      </h2>
+    <div class="mb-4">
+      <SectionTitle title="Habilidades" icon={PuzzleIcon} />
     </div>
     <IconCloudDemo client:load />
   </div>

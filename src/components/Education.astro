@@ -1,6 +1,7 @@
 ---
 import { BookOpen } from "lucide-react";
 import EducationItem from "./EducationItem.astro";
+import SectionTitle from "./ui/SectionTitle";
 const EDUCATION = [
   {
     title: "React JS",
@@ -32,15 +33,8 @@ const EDUCATION = [
 <section class="rounded-xl mx-4 mt-8">
   <!-- section tag -->
   <div class="w-full mx-auto p-4">
-    <div
-      class="flex w-fit items-center gap-2 rounded-full bg-zinc-600/75 text-white px-4 py-2 dark:bg-blue-700/70 dark:text-blue-100"
-    >
-      <BookOpen />
-      <h2
-        class="font-diagraphetc text-sm text-[20px] tracking-wide max-sm:text-xl"
-      >
-        Estudios
-      </h2>
+    <div class="mb-4">
+      <SectionTitle title="Estudios" icon={BookOpen} />
     </div>
     <!-- EducationItem elements  -->
     <div>

@@ -1,4 +1,5 @@
 import { IconCloud } from "@/components/magicui/icon-cloud";
+import { color } from "motion/react";
 
 const slugs = [
     "react",
@@ -9,22 +10,24 @@ const slugs = [
     "css",
     "node.js",
     "python",
-    "vite", 
+    "vitejs", 
     "typescript",
     "git",
     "bootstrap",
     "mysql",
     "mongodb",
     "tailwindcss",
+    "angular",
+    "supabase"
 ];
 
 export function IconCloudDemo() {
   const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
+    (slug) => `https://raw.githubusercontent.com/devicons/devicon/master/icons/${slug}/${slug}-original.svg`,
   );
 
   return (
-    <div className="relative flex items-center justify-center overflow-hidden">
+    <div className="relative flex items-center justify-center overflow-hidden ">
       <IconCloud images={images} />
     </div>
   );

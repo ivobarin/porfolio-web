@@ -27,27 +27,27 @@ let age = new Date().getFullYear() - 2003;
         >
         </div>
         <!-- content (above background) -->
-        <div class="relative z-10 p-6 md:p-10 max-w-3xl mx-auto">
+        <div class="relative z-10 p-6 md:p-10 max-w-4xl mx-auto">
           <div
-            class="font-diagraphetc text-[0.95rem] md:text-[1.25rem] leading-relaxed md:leading-8 text-gray-700 dark:text-gray-300 space-y-4 md:space-y-8 tracking-wide font-light"
+            class="font-diagraphetc text-[0.95rem] md:text-[1.2rem] leading-relaxed md:leading-8 text-gray-700 dark:text-gray-300 space-y-4 md:space-y-6 tracking-wide font-light"
           >
-            <p class="anim-p anim-delay-1">
+            <p>
               Tengo {age} años y soy oriundo de Buenos Aires, Argentina. Actualmente
               estoy cursando la carrera de Técnico Universitario en Programación
-              en la Universidad Tecnológica Nacional (UTN). A lo largo de la carrera
-              hemos adquirido una sólida base de programación y resolución de problemas.
+              en la Universidad Tecnológica Nacional (UTN). A lo largo de la carrera,
+              he adquirido una base sólida en cuanto a programación y resolución
+              de problemas lógicos se refiere.
             </p>
 
-            <p class="anim-p anim-delay-2">
-              Me apasiona el desarrollo web front-end y disfruto creando
-              interfaces de usuario atractivas y funcionales. Me encanta
-              aprender nuevas tecnologías y mejorar mis habilidades
-              constantemente. Disfruto trabajando en proyectos desafiantes que
-              me permiten crecer profesionalmente y aportar soluciones
-              innovadoras.
+            <p>
+              Soy un programador full stack junior con experiencia en el
+              desarrollo de aplicaciones web modernas utilizando tecnologías
+              frontend y backend como React, Angular, Node.js, Express y bases
+              de datos SQL y NoSQL. Estoy enfocado en crear soluciones eficientes y
+              escalables tanto en el lado del frontend y backend.
             </p>
 
-            <p class="anim-p anim-delay-3">
+            <p>
               En mi tiempo libre, me gusta explorar nuevas tendencias en diseño
               web, escuchar música y aprender sobre desarrollo de videojuegos
               con Unity.
@@ -58,40 +58,3 @@ let age = new Date().getFullYear() - 2003;
     </div>
   </div>
 </section>
-
-<style>
-  @media (min-width: 480px) {
-    .anim-p:hover {
-      opacity: 1;
-      animation: slideFadeIn 0.8s ease-out forwards;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-      transition: filter 0.8s ease-out;
-    }
-
-    .anim-delay-1 {
-      transform: translateY(15px);
-      animation-delay: 0.1s;
-    }
-    .anim-delay-2 {
-      transform: translateY(15px);
-      animation-delay: 0.3s;
-    }
-    .anim-delay-3 {
-      animation-delay: 0.5s;
-    }
-
-    @keyframes slideFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-        transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
-      }
-    }
-  }
-</style>

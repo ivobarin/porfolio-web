@@ -18,7 +18,9 @@ const slugs = [
     "mongodb",
     "tailwindcss",
     "angular",
-    "supabase"
+    "supabase",
+    "expo",
+    "express"
 ];
 
 export function IconCloudDemo() {

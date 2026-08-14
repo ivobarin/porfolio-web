@@ -25,7 +25,7 @@ const slugs = [
 
 export function IconCloudDemo() {
   const images = slugs.map(
-    (slug) => `https://raw.githubusercontent.com/devicons/devicon/master/icons/${slug}/${slug}-original.svg`,
+    (slug) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`,
   );
 
   return (

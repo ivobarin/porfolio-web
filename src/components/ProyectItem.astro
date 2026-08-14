@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
   title: string;
@@ -7,9 +7,9 @@ interface Props {
   stack: Array<string>;
   preview?: string | null;
   repo?: string | null;
-  img: string;
+  images: Array<string>;
 }
-const { title, description, stack, img, preview, repo } = Astro.props;
+const { title, description, stack, images, preview, repo } = Astro.props;
 ---
 
 <section
@@ -18,16 +18,55 @@ const { title, description, stack, img, preview, repo } = Astro.props;
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
     <!-- Image column -->
     <div class="order-1 md:order-1">
-      <div class="md:-mx-2 overflow-hidden rounded-lg shadow-md">
-        <img
-          src={img}
-          alt={`Imagen del proyecto ${title}`}
-          width="800"
-          height="600"
-          loading="lazy"
-          decoding="async"
-          class="w-full h-56 md:h-[320px] object-cover transition-transform duration-300 ease-out hover:scale-105 block"
-        />
+      <div class="relative md:-mx-2 overflow-hidden rounded-lg shadow-md">
+        <div
+          class="flex transition-transform duration-500 ease-out"
+          data-slider
+        >
+          {
+            images.map((src) => (
+              <div class="min-w-full" data-slider-slide>
+                <button
+                  type="button"
+                  data-slider-btn
+                  class="block w-full cursor-pointer border-0 bg-transparent p-0"
+                  aria-label={`Ver siguiente imagen de ${title}`}
+                >
+                  <img
+                    src={src}
+                    alt={`Imagen del proyecto ${title}`}
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    class="pointer-events-none block w-full h-56 md:h-[320px] object-cover"
+                  />
+                </button>
+              </div>
+            ))
+          }
+        </div>
+        {
+          images.length > 1 && (
+            <div
+              class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10 px-2 py-1.5 rounded-full bg-black/30 backdrop-blur-sm"
+              role="group"
+              aria-label={`Galería de imágenes de ${title}`}
+            >
+              {images.map((_, index) => (
+                <button
+                  type="button"
+                  data-slider-dot
+                  data-index={index}
+                  aria-label={`Ir a imagen ${index + 1} de ${images.length}`}
+                  class={`h-2.5 w-2.5 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/70 ${
+                    index === 0 ? "bg-white" : "bg-white/40 hover:bg-white/70"
+                  }`}
+                />
+              ))}
+            </div>
+          )
+        }
       </div>
     </div>
 
@@ -49,7 +88,7 @@ const { title, description, stack, img, preview, repo } = Astro.props;
         {
           stack.map((item) => (
             <span class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-2 sm:px-3 py-1 rounded-full text-sm font-medium">
-              <Image 
+              <Image
                 width={50}
                 height={50}
                 src={`https://cdn.simpleicons.org/${item}/${item}`}
@@ -123,7 +162,7 @@ const { title, description, stack, img, preview, repo } = Astro.props;
                 <path d="M17 8l4 4l-4 4" />
                 <path d="M14 4l-4 16" />
               </svg>
-              Ver código
+              Ver repositorio
             </a>
           ) : null
         }
@@ -131,3 +170,42 @@ const { title, description, stack, img, preview, repo } = Astro.props;
     </div>
   </div>
 </section>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-slider]")
+    .forEach((slider: HTMLElement) => {
+      const dots = slider.parentElement!.querySelectorAll("[data-slider-dot]");
+      const count = dots.length;
+      if (count < 2) return;
+
+      let index = 0;
+
+      const render = () => {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("bg-white", i === index);
+          dot.classList.toggle("bg-white/40", i !== index);
+        });
+      };
+
+      slider.addEventListener("click", (event) => {
+        if (
+          event.target instanceof HTMLElement &&
+          event.target.closest("[data-slider-btn]")
+        ) {
+          index = index < count - 1 ? index + 1 : 0;
+          render();
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          render();
+        });
+      });
+
+      render();
+    });
+</script>

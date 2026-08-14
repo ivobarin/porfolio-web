@@ -1,45 +1,49 @@
 ---
 const PROJECTS = [
   {
+    title: "Clon de X (Twitter)",
+    images: ["img/webp/x-1.webp", "img/webp/x-2.webp", "img/webp/x-3.webp"],
+    description:
+      "Proyecto final de la materia de Programacion IV. Clon de la red social X (anteriormente Twitter) que permite a los usuarios registrarse, iniciar sesión, publicar tweets, seguir a otros usuarios y ver un feed de publicaciones.",
+    preview: "https://ivo-barinstein-tp-2-prog-4-2026-c1.vercel.app/",
+    repo: "https://github.com/ivobarin/IVO-BARINSTEIN-TP2-PROG4-2026-C1",
+    stack: ["angular", "NestJS", "typescript", "mongoDB"],
+  },
+  {
     title: "Sala de Juegos",
-    img: "img/SalaJuegos.jpg",
+    images: ["img/webp/SalaJuegos.webp"],
     description:
       "Proyecto para la materia de Programacion IV. Permite a los usuarios registrarse, iniciar sesión y acceder a 4 juegos clasicos. Además, los usuarios pueden hablar por un chat en tiempo real, y ver su historial de juegos y tabla de clasificación por juego.",
     preview: "https://ivo-barinstein-tp1-prog4-2026-c1.vercel.app/",
-    stack: ['angular', 'supabase', 'typescript'],
-  },
-  {
-    title: 'Ivo Barinstein Portfolio',
-    img: 'img/placeholder.jpg',
-    description: 'Este portafolio, desarrollado con Astro y Tailwind CSS. Presenta mis proyectos, habilidades y experiencia de manera atractiva y funcional.',
-    stack: ['astro', 'tailwindCss', 'react', 'typescript' ]
+    stack: ["angular", "supabase", "typescript"],
   },
   {
     title: "Tienda Manch",
-    img: "img/tienda-manch.jpg",
+    images: ["img/webp/tienda-manch.webp", "img/webp/manch-2.webp"],
     description:
       "Proyecto final que simula una tienda e-commerce especializada en bebidas, con funcionalidades completas de navegación, autenticación y un panel de gestión de productos para los administradores.",
     preview: "https://ivobarin.github.io/tienda-manch/",
     repo: "https://github.com/ivobarin/tienda-manch",
-    stack: ['react', 'reactRouter', 'javascript'],
+    stack: ["react", "reactRouter", "javascript"],
   },
   {
     title: "Youtube Downloader",
-    img: "https://raw.githubusercontent.com/ivobarin/Py-Youtube-Downloader/refs/heads/main/other/demostration.gif",
+    images: ["https://raw.githubusercontent.com/ivobarin/Py-Youtube-Downloader/refs/heads/main/other/demostration.gif"],
     description:
       "Programa de escritorio desarrollado con Python y Tkinter que permite a los usuarios descargar videos de YouTube en la mejor calidad posible. Interfaz sencilla donde se pueden pegar la URL del video, seleccionar el formato deseado (video o audio) antes de iniciar la descarga.",
     repo: "https://github.com/ivobarin/Py-Youtube-Downloader",
-    stack: ['python','pypi'],
-    preview: null
-  }, 
+    stack: ["python", "pypi"],
+    preview: null,
+  },
   {
-    title: 'Google Ta Te Ti',
-    img: 'img/ta-te-ti.png',
-    description: 'Clon del juego Ta Te Ti (Tic Tac Toe) de Google, desarrollado con HTML, CSS y JavaScript. Permite a dos jugadores competir en un tablero interactivo, con detección automática de victorias y empates.',
-    preview: 'https://ivobarin.github.io/simple-tic-tac-toe/',
-    repo: 'https://github.com/ivobarin/simple-tic-tac-toe',
-    stack: ['html5', 'css', 'javascript'],
-  }
+    title: "Google Ta Te Ti",
+    images: ["img/webp/ta-te-ti.webp"],
+    description:
+      "Clon del juego Ta Te Ti (Tic Tac Toe) de Google, desarrollado con HTML, CSS y JavaScript. Permite a dos jugadores competir en un tablero interactivo, con detección automática de victorias y empates.",
+    preview: "https://ivobarin.github.io/simple-tic-tac-toe/",
+    repo: "https://github.com/ivobarin/simple-tic-tac-toe",
+    stack: ["html5", "css", "javascript"],
+  },
 ];
 
 import ProyectItem from "./ProyectItem.astro";
@@ -63,7 +67,7 @@ import SectionTitle from "./ui/SectionTitle";
                 repo={project.repo}
                 description={project.description}
                 stack={project.stack}
-                img={project.img}
+                images={project.images}
               />
             </li>
           ))
